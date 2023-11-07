@@ -7,7 +7,7 @@ namespace Inisiatif\Procurement\Tests;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Inisiatif\Procurement\ProcurementServiceProvider;
 
-final class TestCase extends Orchestra
+abstract class TestCase extends Orchestra
 {
     protected function getPackageProviders($app): array
     {
