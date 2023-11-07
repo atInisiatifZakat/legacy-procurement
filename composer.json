@@ -1,38 +1,36 @@
 {
-    "name": ":vendor_name/:package_slug",
-    "description": ":package_description",
-    "keywords": [
-        ":vendor_name",
-        "laravel",
-        ":package_slug"
-    ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "name": "inisiatif/legacy-procurement",
+    "description": "Library untuk integrasi dengan aplikasi procurement lama di Inisiatif Zakat Indonesia",
+    "homepage": "https://github.com/atInisiatifZakat/legacy-procurement",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Nuradiyana",
+            "email": "me@nooradiana.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.15.0"
+        "spatie/laravel-data": "^3.9",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "spatie/laravel-query-builder": "^5.6"
     },
     "require-dev": {
         "laravel/pint": "^1.10",
         "orchestra/testbench": "^8.0",
+        "phpunit/phpunit": "^10.4",
+        "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^5.0"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Inisiatif\\Procurement\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Inisiatif\\Procurement\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -49,7 +47,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Inisiatif\\Procurement\\ProcurementServiceProvider"
             ]
         }
     },
