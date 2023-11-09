@@ -17,5 +17,7 @@ return [
         'procurement_type' => env('INTRANET_TABLE_PROCUREMENT_TYPE', 'eproc.procurement_type'),
 
         'procurement_category' => env('INTRANET_TABLE_PROCUREMENT_TYPE', 'eproc.procurement_category'),
+
+        'request_type' => env('INTRANET_TABLE_REQUEST_TYPE', 'asset.request_type'),
     ],
 ];

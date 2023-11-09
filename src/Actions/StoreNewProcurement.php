@@ -7,6 +7,7 @@ namespace Inisiatif\Procurement\Actions;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Inisiatif\Procurement\Models\Procurement;
+use Inisiatif\Procurement\Models\RequestType;
 use Inisiatif\Procurement\Models\ProcurementDetail;
 use Inisiatif\Procurement\DataTransfers\NewProcurementData;
 use Inisiatif\Procurement\DataTransfers\ProcurementDetailData;
@@ -40,14 +41,12 @@ final class StoreNewProcurement
 
     protected function generateProcurementNumber(): string
     {
-        $latest = Procurement::query()->whereNotNull('procurement_no')->latest('procurement_no')->first();
+        $builder = RequestType::query()->where('id', 1);
 
-        if (! $latest) {
-            return \sprintf('P-%s-0000', now()->format('y'));
-        }
+        $builder->increment('last_no');
 
-        $lastNumber = (int) Str::substr($latest->getAttribute('procurement_no'), -4);
+        $lastNumber = (int) $builder->first()?->getAttribute('last_no');
 
-        return \sprintf('P-%s-%s', now()->format('y'), ++$lastNumber);
+        return \sprintf('P-%s-%s', now()->format('y'), $lastNumber);
     }
 }
