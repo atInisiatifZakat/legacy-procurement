@@ -18,6 +18,7 @@ final class ProcurementDetailData extends Data
         public readonly float|int $price,
         public readonly int $quantity = 1,
         public readonly ?string $note = null,
+        public readonly null|int|string $distributionProcurementItemId = null,
     ) {
     }
 }
