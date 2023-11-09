@@ -57,7 +57,7 @@ final class NewProcurementData extends Data
         public readonly DataCollection $items,
 
         #[Nullable, Uuid]
-        public readonly ?string $distributionId = null,
+        public readonly ?string $distributionProcurementId = null,
 
         #[Nullable, StringType]
         public readonly ?string $note = null,
