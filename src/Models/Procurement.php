@@ -31,6 +31,11 @@ final class Procurement extends Model
         return $this->belongsTo(ProcurementType::class, 'procurement_type_id');
     }
 
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(ProcurementCategory::class, 'procurement_category_id');
+    }
+
     public function details(): HasMany
     {
         return $this->hasMany(ProcurementDetail::class);
